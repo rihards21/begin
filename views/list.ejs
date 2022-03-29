@@ -1,0 +1,30 @@
+<!-- this way we can take whole file and copy it to this page from another-->
+
+<%- include("header") -%>
+
+    <div class="box" id="heading">
+        <h1> <%= listTitle %></h1>
+    </div>
+    
+       
+    <div class="box">
+        <% for (let i=0; i<newListItems.length; i++) { %>
+            <div class="item"> 
+                <input type="checkbox">
+                <p><%= newListItems[i] %></p>
+            </div>
+            
+     <%   } %>
+   
+     <form class="item" action="/" method="post">
+<!-- autocomplete you can remove suggestions -->
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+    
+        <button type="submit" name="list" value=<%= listTitle%>>+</button>
+    </form>
+
+    </div>
+
+
+    <%- include("footer") -%>
+
